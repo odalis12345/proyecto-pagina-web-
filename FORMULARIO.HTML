@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Escobar VentuRA Alisson Odalis">
+    <meta name="date" content="25/10/2025">
+    <meta name="description" content="formulario">
+    <meta name="keywords" content="formulario, CSS, registro">
+    <link rel="stylesheet" href="estilosformulario.css">
+
+    <title>Registro de Usuario</title>
+    
+</head>
+
+<body>
+    
+    <header>
+        <nav>
+            <a href="INDEX.html">Inicio |</a>
+            <a href="FORMULARIO.HTML">Formulario |</a>
+            <a href="ACERCA DE .HTML">Acerca de</a>
+          </nav>
+        <h1>Registro de Usuario</h1>
+        <p>Por favor completa tus datos</p>
+    </header>
+
+    <main>
+        <form class="formulario">
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="@gmail.com" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+
+            <label for="telefono">Número de teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 272-722-4874" pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}" required>
+
+            <label for="hamburguesa">Tipo De Hamburguesa:</label>
+            <select id="hamburguesa" name="hamburguesa" required>
+                <option value="">Seleccione una opción por favor</option>
+                <option value="clasica-cheeseburger">Hamburguesa clasica/ cheeseburger (hamburguesa con queso)</option>
+                <option value="smash-burger">Hamburguesa smash burger</option>
+                <option value="bacon-cheeseburger">Hamburguesa Bacon cheeseburger</option>
+                <option value="gourmet">Hamburguesa gourmet</option>
+                <option value="vegetariana">Hamburguesa vegetariana</option>
+                <option value="pollo-pavo">Hamburguesa de Pollo o Pavo</option>
+            </select>
+
+            <label for="cantidad_hamburguesas">Introduce la cantidad de hamburguesas deseadas:</label>
+            <input type="number" id="cantidad_hamburguesas" name="cantidad_hamburguesas" min="1" max="100" value="1" required>
+
+
+            <div class="grupo-opciones">
+                <p>¿Desea adquirir una bebida?</p>
+                <label><input type="radio" name="quiere_bebida" value="si" id="quiereBebidaSi"> Sí</label>
+                <label><input type="radio" name="quiere_bebida" value="no" id="quiereBebidaNo" checked> No</label>
+            </div>
+
+            <div id="contenedorBebidas">
+                <p>Bebidas sugeridas:</p>
+                <div class="grupo-opciones">
+                    <label><input type="radio" name="bebida_seleccionada" value="Coca-Cola"> Coca-Cola </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Pepsi"> Pepsi </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Sprite"> Sprite </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Fanta"> Fanta </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Manzanita Sol"> Manzanita Sol </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Jarritos">Jarritos </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Sidral Mundet"> Sidral Mundet </label>
+                    <label><input type="radio" name="bebida_seleccionada" value="Sangria Senorial"> Sangría Señorial </label>
+                </div>
+
+                <label for="tamano_bebida">Tamaño de bebida:</label>
+                <select id="tamano_bebida" name="tamano_bebida">
+                    <option value="">Seleccione una opción por favor</option>
+                    <option value="3 Litros">3 Litros</option>
+                    <option value="2 Litros">2 Litros</option>
+                    <option value="1.5 Litros">1.5 Litros</option>
+                    <option value="1 Litro">1 Litro</option>
+                    <option value="600 Mililitros">600 Mililitros</option>
+                </select>
+            </div>
+
+
+            <div class="grupo-opciones">
+                <p>Desea confirmar su pedido:</p>
+                <label><input type="radio" name="confirmar_pedido" value="si"> Sí</label>
+                <label><input type="radio" name="confirmar_pedido" value="no" checked> No</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>CBTis 142 - Práctica de Formulario con CSS</p>
+    </footer>
+
+    <script>
+        // Obtenemos las referencias a los elementos HTML
+        const quiereBebidaSi = document.getElementById('quiereBebidaSi');
+        const quiereBebidaNo = document.getElementById('quiereBebidaNo');
+        const contenedorBebidas = document.getElementById('contenedorBebidas');
+
+        // Función para mostrar u ocultar el contenedor de bebidas
+        function toggleBebidas() {
+            if (quiereBebidaSi.checked) {
+                contenedorBebidas.style.display = 'block'; // Muestra el div
+            } else {
+                contenedorBebidas.style.display = 'none'; // Oculta el div
+                
+                // Opcional: Desmarcar todas las bebidas y resetear el tamaño cuando se ocultan
+                
+                // CORRECCIÓN JS: Se actualiza el selector a 'input[type="radio"]'
+                const radiosBebidas = contenedorBebidas.querySelectorAll('input[type="radio"]');
+                radiosBebidas.forEach(radio => radio.checked = false);
+                
+                document.getElementById('tamano_bebida').value = ''; // Resetea el selector de tamaño
+            }
+        }
+
+        // Agregamos 'listeners' para detectar cuándo cambian los radio buttons
+        quiereBBebidaSi.addEventListener('change', toggleBebidas);
+        quiereBebidaNo.addEventListener('change', toggleBebidas);
+
+        // Llamamos a la función al cargar la página para establecer el estado inicial
+        toggleBebidas();
+    </script>
+</body>
+
+</html>

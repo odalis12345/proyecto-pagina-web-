@@ -1,0 +1,297 @@
+/* Variables CSS para una paleta de rojos consistente */
+:root {
+    --primary-red: #dc3545; /* Rojo cereza/clásico para elementos principales */
+    --light-red-bg: #f8d7da; /* Fondo rojo muy claro */
+    --dark-red-text: #490e11; /* Texto muy oscuro, casi borgoña */
+    --medium-red-border: #f5c6cb; /* Rojo intermedio para bordes y separadores */
+    --hover-red: #c82333; /* Rojo más oscuro para efectos hover */
+    --text-color-general: #333; /* Color de texto general para legibilidad */
+    --light-grey-form: #e0e0e0; /* Gris muy claro para otros detalles si se necesitan */
+    --background-form-group: #fffaf0; /* Fondo ligeramente crema/rosado para grupos de opciones */
+    --background-bebidas: #ffe0e6; /* Fondo rosado para el contenedor de bebidas */
+    --background-coca-cola-extra: #fff0f3; /* Fondo aún más claro para la opción Coca-Cola */
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-red-bg); /* Fondo rojo muy claro */
+    color: var(--text-color-general);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--primary-red); /* Rojo principal para el encabezado */
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Contenedor principal para el formulario */
+main {
+    flex-grow: 1; /* Permite que el main ocupe el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el formulario al principio verticalmente */
+    padding: 20px;
+}
+
+/* Formulario */
+.formulario {
+    background-color: white;
+    width: 90%;
+    max-width: 600px; /* Ancho máximo aumentado para mejor contenido */
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas generales */
+.formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-red-text); /* Texto de label en rojo oscuro */
+    margin-top: 15px; /* Espacio superior para separar labels */
+}
+
+/* Campos de entrada y select */
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="password"],
+.formulario input[type="tel"], /* Añadido type="tel" */
+.formulario input[type="number"], /* Añadido type="number" */
+.formulario select {
+    width: 100%;
+    padding: 0.8rem; /* Padding ligeramente aumentado */
+    margin-bottom: 1.2rem; /* Margen inferior aumentado */
+    border: 1px solid var(--medium-red-border); /* Borde rojo intermedio */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto focus */
+.formulario input:focus,
+.formulario select:focus {
+    outline: none;
+    border-color: var(--primary-red); /* Borde rojo principal al enfocar */
+    box-shadow: 0 0 6px rgba(220, 53, 69, 0.4); /* Sombra roja al enfocar */
+}
+
+/* Grupo de opciones (radio/checkbox) */
+.grupo-opciones {
+    margin-bottom: 1.5rem; /* Margen inferior aumentado */
+    padding: 1rem;
+    border: 1px solid var(--medium-red-border); /* Borde en rojo intermedio */
+    border-radius: 8px;
+    background-color: var(--background-form-group); /* Fondo ligeramente crema/rosado */
+}
+
+.grupo-opciones p {
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: var(--dark-red-text); /* Texto en rojo oscuro */
+}
+
+.grupo-opciones label {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 0.4rem;
+    color: var(--text-color-general);
+}
+
+/* Estilo para los radio buttons y checkboxes en los grupos */
+.grupo-opciones input[type="radio"],
+.grupo-opciones input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+    accent-color: var(--primary-red); /* Color rojo para los controles */
+    transform: scale(1.1); /* Ligeramente más grandes para visibilidad */
+}
+
+/* Contenedor de Bebidas y Opción Adicional Coca-Cola */
+#contenedorBebidas {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--primary-red); /* Borde rojo principal */
+    border-radius: 8px;
+    background-color: var(--background-bebidas); /* Fondo rosado */
+}
+
+#contenedorBebidas p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--dark-red-text);
+}
+
+#opcionCocaColaAdicional {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed var(--hover-red); /* Borde punteado en rojo para destacar */
+    border-radius: 5px;
+    background-color: var(--background-coca-cola-extra); /* Fondo más claro para la opción */
+}
+#opcionCocaColaAdicional p {
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: var(--dark-red-text);
+}
+#opcionCocaColaAdicional label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+#opcionCocaColaAdicional input[type="radio"] {
+    accent-color: var(--primary-red);
+}
+
+
+/* Botón */
+.formulario button {
+    width: 100%;
+    background-color: var(--primary-red); /* Fondo rojo principal */
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem; /* Padding aumentado */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover del botón */
+.formulario button:hover {
+    background-color: var(--hover-red); /* Rojo más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Pie */
+footer {
+    text-align: center;
+    background-color: var(--dark-red-text); /* Rojo muy oscuro para el footer */
+    color: white;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .formulario {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+    .formulario {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    .formulario label {
+        margin-top: 10px;
+    }
+    .formulario input, .formulario select, .formulario button {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+    .grupo-opciones {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* ===== Estilos para la página Acerca de ===== */
+.acerca-de {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.foto-desarrollador {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.acerca-de h2 {
+  color: #b22222;
+  margin-top: 1.5rem;
+}
+
+.acerca-de ul {
+  list-style: none;
+  padding: 0;
+}
+
+.acerca-de li {
+  margin: 0.5rem 0;
+}
+
+.descripcion, .trayectoria {
+  text-align: justify;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+.contacto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contacto li {
+  margin: 0.5rem 0;
+}
+
+.contacto a {
+  color: #b22222;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contacto a:hover {
+  text-decoration: underline;
+}
+
+iframe {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

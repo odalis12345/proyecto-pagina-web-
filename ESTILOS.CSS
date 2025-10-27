@@ -1,0 +1,43 @@
+/* Variables CSS para una paleta de rojos consistente */
+:root {
+    --primary-red: #dc3545; /* Rojo cereza/clásico para elementos principales */
+    --light-red-bg: #f8d7da; /* Fondo rojo muy claro */
+    --dark-red-text: #490e11; /* Texto muy oscuro, casi borgoña */
+    --text-color-general: #333; /* Color de texto general para legibilidad */
+}
+
+/* resert basico: con esto eliminamos margenes y rellenos que el navegador pone por defecto*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* con esto hacemos que el padding y border se incluyan en las medidas de width y height*/
+}
+
+/* estilos generales para el cuerpo en pagina*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light-red-bg); /* CAMBIADO de #f0f4f8 */
+    color: var(--text-color-general); /* CAMBIADO de #333 (aunque es el mismo color) */
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-red); /* CAMBIADO de #0077b6 */
+    color: white; /* AÑADIDO para que el texto se lea sobre el fondo rojo */
+}
+
+/* titulo dentro del encabezado*/
+header h1 {
+    font-size: 2rem; /*tamaño de la fuente*/
+    width: 80%; /* ancho del 80% del contenedor*/
+    margin-bottom: 0.5rem; /*margen inferior*/
+    /* rem : unidad relativa al tamaño de fuente root (html)*/
+}
+
+/*seccion principal con una tarjeta*/
+.tarjeta {
+    background-color: white; /* color fondo blanco (Se mantiene blanco para contrastar) */
+    width: 80%; /* ancho del contenedor padre*/
+    max-width: 600px; /* ancho maximo de 600 pixeles*/
+    margin: 2rem auto; /*centrado horizontal con un margen automatico*/
+}
